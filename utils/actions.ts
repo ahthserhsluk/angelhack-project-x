@@ -77,3 +77,22 @@ export async function openaiAction3(userInput: string) {
   console.log({data:object});
   return object;
   }
+
+
+  export async function openaiAction4(userInput: string) {
+    const { object } = await generateObject({
+      model:openai('gpt-3.5-turbo'),
+      schema: z.object({
+        proposal_title: z.string(),
+        details: z.string(),
+        price: z.number(),
+        delivery_time: z.string(),
+        skills: z.string(),
+      }
+    ),
+      prompt: `user have provider you with a ` ,
+    });
+    console.log({data:object});
+    return object;
+    }
+  

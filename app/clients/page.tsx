@@ -1,10 +1,12 @@
 "use client"
-import React, { FormEvent, useState } from 'react';
+import React, { FormEvent, useContext, useState } from 'react';
 import { openaiAction3 } from '@/utils/actions';
 import { GlobeDemo } from './_components/Globe';
 import Link from 'next/link';
 
+
 const Page = () => {
+
   const [requirements, setRequirements] = useState({
     proposal_title: '',
     details: '',
@@ -12,6 +14,8 @@ const Page = () => {
     delivery_time: '',
     skills: '',
   });
+
+
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();

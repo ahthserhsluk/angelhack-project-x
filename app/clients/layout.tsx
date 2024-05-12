@@ -15,10 +15,13 @@ export default function RootLayout({
     <html lang="en">
       <body>
 
+<ContextProvider>
 
         <Navbar />
    
-        {children}</body>
+        {children}
+</ContextProvider>
+        </body>
     </html>
   )
 }

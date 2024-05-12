@@ -1,13 +1,16 @@
+"use client"
 import React, { createContext, useState } from 'react';
 
+type RequirementType = {
+  proposal_title: string;
+  details: string;
+  price: string;
+  delivery_time: string;
+  skills: string;
+};
+
 type StateContextType = {
-  requirements: {
-    proposal_title: string;
-    details: string;
-    price: string;
-    delivery_time: string;
-    skills: string;
-  };
+  requirements: RequirementType;
   user: string;
 };
 
@@ -18,7 +21,7 @@ type ContextProviderProps = {
 };
 
 export const ContextProvider = ({ children }: ContextProviderProps) => {
-  const [Context, setContext] = useState({
+  const [context, setContext] = useState<StateContextType>({
     requirements: {
       proposal_title: '',
       details: '',
@@ -29,9 +32,9 @@ export const ContextProvider = ({ children }: ContextProviderProps) => {
     user: '',
   });
 
-
   return (
-    <StateContext.Provider value={Context}>{children}</StateContext.Provider>
+    <StateContext.Provider value={{ context, setContext }}>
+      {children}
+    </StateContext.Provider>
   );
 };
-
