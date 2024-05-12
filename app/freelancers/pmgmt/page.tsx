@@ -32,7 +32,7 @@ const Page = () => {
         <main className="h-screen text-black flex items-center justify-normal flex-col">
             <div className="bg-black h-64 w-full mt-1 rounded-3xl text-white flex p-10  justify-around items-center mx-20">
                 <h1 className="font-medium text-6xl text-left w-full">
-                 Kraami   Project Management
+                 Kramic   Project Management
                 </h1>
             </div>
 
