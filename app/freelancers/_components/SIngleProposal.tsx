@@ -11,7 +11,7 @@ interface Proposal {
   rejectionReason?: string;
 }
 
-const proposals = data;
+const proposals: Proposal[] = data; // Ensure data is of type Proposal[]
 
 const ProposalList: React.FC = () => {
   const [showInsights, setShowInsights] = useState(false);
