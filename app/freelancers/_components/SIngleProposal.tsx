@@ -42,7 +42,7 @@ const ProposalList: React.FC = () => {
                 Proposed Rate: ₹ {proposal.proposedRate}
               </p>
               <span
-                className={`text-sm font-bold text-white bg-${getStatusBadgeColor(proposal.status)} rounded-full px-2 py-1`}
+                className={`text-sm font-bold text-white ${getStatusBadgeColor(proposal.status)} rounded-full px-2 py-1`}
               >
                 {proposal.status === 'Rejected' ? (
                   <button onClick={() => {
@@ -74,13 +74,13 @@ const ProposalList: React.FC = () => {
 const getStatusBadgeColor = (status: string) => {
   switch (status) {
     case 'Pending':
-      return 'yellow-500';
+      return 'bg-yellow-500';
     case 'Accepted':
-      return 'green-500';
+      return 'bg-green-500';
     case 'Rejected':
-      return 'red-500';
+      return 'bg-red-500';
     default:
-      return 'gray-500';
+      return 'bg-gray-500';
   }
 };
 

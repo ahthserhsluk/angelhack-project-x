@@ -70,6 +70,8 @@ export async function openaiAction3(userInput: string) {
     }
   ),
     prompt: `You are a chatbot from project x, a freelancing platform. User will give you what they want to get done from a freelancer, and your job is to write a requiremeent post for them.  return a JSON object.
+
+    details: "give minimum 150 words"
     go with general skills rather than any tech stack focused, experience, etc. users belong to india, keep prices in ruppe, so keep that in mind., also keep the proposal simple and easy to understand. user: ${userInput} ` ,
   });
   console.log({data:object});

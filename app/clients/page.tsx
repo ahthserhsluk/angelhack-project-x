@@ -1,13 +1,10 @@
 "use client"
-import React, { useState } from 'react'
-// import img from '@/public/freelancer.jpg'
-import Image from 'next/image'
-// Import the openaiAction function
-import { openaiAction, openaiAction2, openaiAction3 } from '@/utils/actions'
-import { Calendar, IndianRupee, Link } from 'lucide-react'
+import React, {  useState } from 'react'
+import {  openaiAction3 } from '@/utils/actions'
 import { GlobeDemo } from './_components/Globe'
-
+import Link from 'next/link'
 const Page = () => {
+
   const [requirements, setRequirements] = useState({
     "proposal_title": "",
     "details": "",
@@ -32,7 +29,7 @@ const Page = () => {
   return (
     <div className='flex h-screen bg-white text-black w-full'>
 
-      <div className='w-1/3 justify-center items-start flex flex-col gap-5 '>
+      <div className='w-1/3 justify-center items-start flex flex-col gap-5 px-16'>
 
      
       {
@@ -53,17 +50,21 @@ const Page = () => {
           (
 
             <>
-              <div className='w-full justify-center items-start flex flex-col gap-5 px-20 font-medium text-xl'>
+              <div className='w-full justify-center items-start flex flex-col gap-5 font-medium text-xl'>
                 <p className='font-bold text-4xl'>{requirements.proposal_title}</p>
                 <p>{requirements.details}</p>
                 <p className='font-medium flex gap-4'><span className='font-bold '> Timeline: </span>  {requirements.delivery_time}</p>
-                <p className='font-medium flex gap-4'><span className='font-bold '>Price: </span>  {requirements.price}</p>
+                <p className='font-medium flex gap-4'><span className='font-bold '>Price: </span>  ₹ {requirements.price}</p>
                 <p className='font-medium flex gap-4'><span className='font-bold '>Skils: </span>  {requirements.skills}</p>
 
 <div className='flex  gap-4 mt-4'>
 
-                <button className='bg-[#020] text-white p-3 rounded-lg'>Find Freelancer Packages</button>
+              <Link href={`/clients/packages/${JSON.stringify(requirements.skills)}`}>
+               <button className='bg-[#020] text-white p-3 rounded-lg'>Find Freelancer Packages</button>
+              </Link> 
+              <Link href={'/clients/bid'}>
                 <button className='bg-[#020] text-white p-3 rounded-lg'>Post a Project</button>
+                </Link>
 </div>
 
               </div>

@@ -14,10 +14,10 @@ const FNavbar = () => {
 <div className='flex space-x-7'>
 
       <div className='space-x-7'>
-        <Link href='/freelancers'> Home </Link>
+
         <Link href='/freelancers/projects'> Find a gig </Link>
         <Link href='/freelancers/proposals'> Proposals </Link>
-        <Link href='/freelancers/promgmt'> Project Mgmt. </Link>
+        <Link href='/freelancers/pmgmt'> Project Mgmt. </Link>
         <Link href='/freelancers/community'> Community </Link>
       </div>
 
