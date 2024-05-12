@@ -10,6 +10,7 @@ const data = [
     client: 'Stark Industries',
     proposedRate: 20000,
     status: 'Rejected',
+    rejectionReason: 'Costing,Experience,Portfolio',
   },
   {
     service: 'Mobile App Development',
@@ -34,6 +35,7 @@ const data = [
     client: 'Globex Corp.',
     proposedRate: 20000,
     status: 'Rejected',
+    rejectionReason: 'The client found a cheaper alternative.',
   },
 ];
 

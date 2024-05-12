@@ -8,6 +8,10 @@ const Page = () => {
         <h2 className='font-bold text-4xl '>Find Insights on why your proposal was not selected </h2>
 
 
+
+        <div>
+          
+        </div>
     </main>
   )
 }
