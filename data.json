@@ -1,0 +1,84 @@
+{
+  "listings": [
+    {
+      "id": 1,
+      "title": "Mobile App Development",
+      "description": "Develop a native mobile app for Android and iOS platforms. Must include user authentication, push notifications, and in-app purchases.",
+      "timeline": "4-6 weeks",
+      "price": "₹1,50,000",
+      "client": "Tech Innovations Pvt. Ltd."
+    },
+    {
+      "id": 2,
+      "title": "Graphic Design for Social Media",
+      "description": "Design visually appealing graphics for social media posts. Includes banners, cover photos, and promotional images.",
+      "timeline": "2 weeks",
+      "price": "₹20,000",
+      "client": "Foodie Junction"
+    },
+    {
+      "id": 3,
+      "title": "SEO Services",
+      "description": "Optimize website content for better search engine visibility. Includes keyword research, on-page optimization, and backlink building.",
+      "timeline": "Ongoing",
+      "price": "₹25,000 per month",
+      "client": "Fashionista Clothing"
+    },
+    {
+      "id": 4,
+      "title": "Translation Services",
+      "description": "Translate documents from English to Hindi. Accurate and culturally sensitive translations required.",
+      "timeline": "Per word",
+      "price": "₹5 per word",
+      "client": "Global Education Foundation"
+    },
+    {
+      "id": 5,
+      "title": "Video Editing",
+      "description": "Edit promotional videos for YouTube and social media. Must include effects, transitions, and background music.",
+      "timeline": "Per video",
+      "price": "₹10,000 per video",
+      "client": "Travel Adventures Pvt. Ltd."
+    },
+    {
+      "id": 6,
+      "title": "E-commerce Website Development",
+      "description": "Create an online store with payment gateway integration. Must support multiple categories, product variations, and discounts.",
+      "timeline": "6-8 weeks",
+      "price": "₹2,00,000",
+      "client": "Home Essentials"
+    },
+    {
+      "id": 7,
+      "title": "Content Writing for Blogs",
+      "description": "Write engaging blog posts on various topics including technology, lifestyle, and travel. SEO optimized content required.",
+      "timeline": "Per article",
+      "price": "₹2,000 per article",
+      "client": "Digital Trends Magazine"
+    },
+    {
+      "id": 8,
+      "title": "Digital Marketing Services",
+      "description": "Promote businesses through online channels including social media, email marketing, and search engine advertising.",
+      "timeline": "Ongoing",
+      "price": "₹30,000 per month",
+      "client": "TechConnect Solutions"
+    },
+    {
+      "id": 9,
+      "title": "UI/UX Design",
+      "description": "Design intuitive user interfaces and user experiences for web and mobile applications. Must focus on usability and accessibility.",
+      "timeline": "3-4 weeks",
+      "price": "₹40,000",
+      "client": "Innovate Tech Solutions"
+    },
+    {
+      "id": 10,
+      "title": "Data Entry Services",
+      "description": "Accurately input data from various sources into spreadsheets or databases. High attention to detail required.",
+      "timeline": "Per hour",
+      "price": "₹500 per hour",
+      "client": "InfoLink Corporation"
+    }
+  ]
+}
