@@ -1,61 +1,78 @@
 "use client"
-import { SparklesCore } from '@/components/ui/sparkles'
-import React from 'react'
-import OpenAI from "openai";
-import { openaiAction } from '@/utils/actions';
+import React, { useState } from 'react'
+import img from '@/public/freelancer.jpg'
+import Image from 'next/image'
+// Import the openaiAction function
+import { openaiAction, openaiAction2, openaiAction3 } from '@/utils/actions'
+import { Calendar, IndianRupee } from 'lucide-react'
 
 const Page = () => {
+  const [requirements, setRequirements] = useState({
+    "proposal_title": "",
+    "details": "",
+    "price": "",
+    "delivery_time": "",
+    "skills": ""
+  })
 
-  
-  async function main(requirements: string) {
-    const data = await openaiAction(requirements)
-    console.log(data)
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    const userInput = e.target[0].value
+    console.log(userInput)
+    // Call the openaiAction function and handle the response
+    const response = await openaiAction3(userInput)
+    console.log(response)
+    // Update the state with the response
+    setRequirements(response)
+
+
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    const result = main(e.target[0].value)
-    console.log(result)
-
-  };
   return (
-    <main className='bg-[#222] h-screen flex flex-col justify-center items-center text-black'>
-        <div className="h-full w-full bg-black flex flex-col items-center justify-center overflow-hidden rounded-md">
-        <form onSubmit={handleSubmit}>
-      <div className="flex">
-        <input
-          type="text"
-          placeholder="Tell us your requirements..."
-          className="bg-[#000] text-white p-4 rounded-lg w-[30rem] focus:outline-0"
-        />
-        <button type="submit" className="bg-[#333] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-          Submit
-        </button>
-      </div>
-    </form>
-      <div className="w-[40rem] h-40 relative">
-        {/* Gradients */}
-        <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-[2px] w-3/4 blur-sm" />
-        <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-px w-3/4" />
-        <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-[5px] w-1/4 blur-sm" />
-        <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px w-1/4" />
- 
-        {/* Core component */}
-        <SparklesCore
-          background="transparent"
-          minSize={0.4}
-          maxSize={1}
-          particleDensity={1200}
-          className="w-full h-full"
-          particleColor="#FFFFFF"
-        />
- 
-        {/* Radial Gradient to prevent sharp edges */}
-        <div className="absolute inset-0 w-full h-full bg-black [mask-image:radial-gradient(350px_200px_at_top,transparent_20%,white)]"></div>
-      </div>
-    </div>
-      
-    </main>
+    <>
+      {
+
+
+        requirements.proposal_title === "" ?
+          (
+
+            <div className='max-h-screen bg-white text-black w-full flex'>
+              <div className='w-1/3 justify-center items-start flex flex-col gap-5 px-20'>
+                <h1 className='text-3xl font-medium'>Hi!</h1>
+                {/* Display the proposal_title from the state */}
+                <p>{requirements.proposal_title}</p>
+                <form onSubmit={handleSubmit} className='flex items-center justify-center'>
+                  <input type="text" placeholder='tell us your requirement?' className='text-black text-3xl outline-0 focus:outline-0' />
+                  <button type='submit' className=' text-black text-4xl p-3'>→</button>
+                </form>
+              </div>
+              <Image src={img} alt="Picture of the author" className='w-2/3 background-contain' />
+            </div>)
+          :
+          (
+
+            <div className='h-screen bg-white text-[#020] w-full flex justify-start'>
+              <div className='w-1/2 justify-center items-start flex flex-col gap-5 px-20 font-medium text-xl'>
+                <p className='font-bold text-4xl'>{requirements.proposal_title}</p>
+                <p>{requirements.details}</p>
+                <p className='font-medium flex gap-4'><span className='font-bold '> Timeline: </span>  {requirements.delivery_time}</p>
+                <p className='font-medium flex gap-4'><span className='font-bold '>Price: </span>  {requirements.price}</p>
+                <p className='font-medium flex gap-4'><span className='font-bold '>Skils: </span>  {requirements.skills}</p>
+
+<div className='flex  gap-4'>
+
+                <button className='bg-[#020] text-white p-3 rounded-lg'>Find Freelancer Packages</button>
+                <button className='bg-[#020] text-white p-3 rounded-lg'>Post a Project</button>
+</div>
+
+              </div>
+              <div className=" w-full bg-cover bg-center" style={{ backgroundImage: `url(freelancer.jpg)` }}>
+                {/* You can add additional content inside the div if needed */}
+              </div>
+            </div>
+          )
+      }
+    </>
   )
 }
 

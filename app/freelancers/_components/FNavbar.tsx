@@ -15,15 +15,13 @@ const FNavbar = () => {
 
       <div className='space-x-7'>
         <Link href='/freelancers'> Home </Link>
-        <Link href='/freelancers/projects'> Projects </Link>
+        <Link href='/freelancers/projects'> Find a gig </Link>
         <Link href='/freelancers/proposals'> Proposals </Link>
+        <Link href='/freelancers/promgmt'> Project Mgmt. </Link>
         <Link href='/freelancers/community'> Community </Link>
       </div>
 
-      <div>
-        <h1>Hello Vaibhav!</h1>
-        
-      </div>
+     
 </div>
     </div>
   )
